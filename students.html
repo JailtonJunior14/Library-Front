@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/students.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+<div class="layout">
+    <nav id="sidebar"></nav>
+
+
+    <div class="container">
+        <header>
+            <h1>Students</h1>
+            <p>Manage registered readers</p>
+        </header>
+
+        <div class="register">
+            <div class="">
+                <h2>Registered Students</h2>
+                <p>5 active readers in the system</p>
+            </div>
+
+            <div class="action">
+                <div class="search">
+                    <input type="search" name="s" id="searchS" placeholder="SEARCH...">
+                </div>
+
+                <div class="register-student">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                    <h3>Register Student</h2>
+                </div>
+            </div>
+        </div>
+        <div id="table"></div>
+    </div>
+</div>
+
+
+
+
+
+
+<script type="module">
+    import {loadSideBar, loadTableStudents} from '/JS/layout.js';
+
+    await loadSideBar();
+    await loadTableStudents();
+</script>
+</body>
+</html>

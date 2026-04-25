@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+:root {
+  /* ========================================
+     PRIMARY PALETTE - Gold/Amber Tones
+     ======================================== */
+  --color-primary-50: oklch(97% 0.02 80);
+  --color-primary-100: oklch(92% 0.04 80);
+  --color-primary-200: oklch(85% 0.08 80);
+  --color-primary-300: oklch(78% 0.12 80);
+  --color-primary-400: oklch(71% 0.16 80);
+  --color-primary-500: oklch(64% 0.18 80);
+  --color-primary-600: oklch(57% 0.16 80);
+  --color-primary-700: oklch(50% 0.14 80);
+  --color-primary-800: oklch(43% 0.12 80);
+  --color-primary-900: oklch(36% 0.10 80);
+
+  /* Primary Semantic Aliases */
+  --color-primary: var(--color-primary-500);
+  --color-primary-hover: var(--color-primary-400);
+  --color-primary-active: var(--color-primary-600);
+  --color-primary-glow: oklch(75% 0.16 80);
+  --color-primary-subtle: oklch(25% 0.06 80);
+
+  /* ========================================
+     SECONDARY PALETTE - Warm Neutrals
+     ======================================== */
+  --color-secondary-50: oklch(95% 0.01 60);
+  --color-secondary-100: oklch(90% 0.02 60);
+  --color-secondary-200: oklch(80% 0.04 60);
+  --color-secondary-300: oklch(70% 0.06 60);
+  --color-secondary-400: oklch(60% 0.08 60);
+  --color-secondary-500: oklch(50% 0.10 60);
+  --color-secondary-600: oklch(40% 0.08 60);
+  --color-secondary-700: oklch(30% 0.06 60);
+  --color-secondary-800: oklch(20% 0.04 60);
+  --color-secondary-900: oklch(15% 0.02 60);
+
+  /* Secondary Semantic Aliases */
+  --color-secondary: var(--color-secondary-600);
+  --color-secondary-hover: var(--color-secondary-500);
+
+  /* ========================================
+     BACKGROUND PALETTE - Dark Library
+     ======================================== */
+  --color-bg-base: oklch(8% 0.02 60);
+  --color-bg-elevated: oklch(12% 0.03 60);
+  --color-bg-surface: oklch(16% 0.04 60);
+  --color-bg-overlay: oklch(20% 0.04 60);
+  --color-bg-input: oklch(14% 0.03 60);
+
+  /* Background Semantic Aliases */
+  --color-background: var(--color-bg-base);
+  --color-bg-card: var(--color-bg-surface);
+  --color-bg-popover: var(--color-bg-elevated);
+  --color-bg-muted: var(--color-bg-overlay);
+
+  /* ========================================
+     SIDEBAR PALETTE - Glass Dark
+     ======================================== */
+  --color-sidebar-bg: oklch(15% 0.03 60 / 0.75);
+  --color-sidebar-bg-solid: oklch(15% 0.03 60);
+  --color-sidebar-fg: oklch(88% 0.03 70);
+  --color-sidebar-fg-muted: oklch(70% 0.04 65);
+  --color-sidebar-accent: oklch(20% 0.04 60 / 0.6);
+  --color-sidebar-border: oklch(60% 0.08 70 / 0.15);
+  --color-sidebar-ring: var(--color-primary);
+
+  /* Sidebar Item States */
+  --color-sidebar-item-default: transparent;
+  --color-sidebar-item-hover: oklch(100% 0 0 / 0.05);
+  --color-sidebar-item-active-bg: linear-gradient(
+    to right,
+    oklch(64% 0.18 80 / 0.2),
+    transparent
+  );
+  --color-sidebar-item-active-border: oklch(64% 0.18 80 / 0.3);
+  --color-sidebar-item-active-text: var(--color-primary);
+  --color-sidebar-item-active-glow: 0 0 20px oklch(64% 0.18 80 / 0.15);
+
+  /* ========================================
+     ACCENT PALETTE - Burgundy/Leather
+     ======================================== */
+  --color-accent-50: oklch(95% 0.03 40);
+  --color-accent-100: oklch(88% 0.06 40);
+  --color-accent-200: oklch(78% 0.10 40);
+  --color-accent-300: oklch(68% 0.12 40);
+  --color-accent-400: oklch(58% 0.14 40);
+  --color-accent-500: oklch(48% 0.12 40);
+  --color-accent-600: oklch(38% 0.10 40);
+  --color-accent-700: oklch(28% 0.08 40);
+  --color-accent-800: oklch(20% 0.06 40);
+  --color-accent-900: oklch(12% 0.04 40);
+
+  /* Accent Semantic Aliases */
+  --color-accent: var(--color-accent-600);
+  --color-accent-hover: var(--color-accent-500);
+
+  /* ========================================
+     HOVER STATES
+     ======================================== */
+  --color-hover-subtle: oklch(100% 0 0 / 0.05);
+  --color-hover-light: oklch(100% 0 0 / 0.08);
+  --color-hover-medium: oklch(100% 0 0 / 0.12);
+  --color-hover-primary: oklch(64% 0.18 80 / 0.15);
+  --color-hover-accent: oklch(48% 0.12 40 / 0.15);
+
+  /* ========================================
+     BORDER PALETTE
+     ======================================== */
+  --color-border-subtle: oklch(60% 0.06 70 / 0.10);
+  --color-border-default: oklch(60% 0.08 70 / 0.18);
+  --color-border-hover: oklch(64% 0.12 80 / 0.40);
+  --color-border-active: oklch(64% 0.18 80 / 0.50);
+  --color-border-focus: var(--color-primary);
+  --color-border-input: oklch(60% 0.06 70 / 0.20);
+
+  /* Border Semantic Aliases */
+  --color-border: var(--color-border-default);
+  --color-ring: var(--color-primary);
+
+  /* ========================================
+     TEXT COLORS
+     ======================================== */
+  --color-text-primary: oklch(94% 0.01 70);
+  --color-text-secondary: oklch(88% 0.02 70);
+  --color-text-tertiary: oklch(72% 0.03 65);
+  --color-text-muted: oklch(60% 0.04 60);
+  --color-text-disabled: oklch(45% 0.03 60);
+  --color-text-inverse: oklch(15% 0.03 60);
+
+  /* Text Semantic Aliases */
+  --color-foreground: var(--color-text-primary);
+  --color-muted-foreground: var(--color-text-tertiary);
+
+  /* ========================================
+     STATE COLORS
+     ======================================== */
+  --color-destructive: oklch(55% 0.30 25);
+  --color-destructive-hover: oklch(60% 0.32 25);
+  --color-success: oklch(65% 0.20 145);
+  --color-warning: oklch(75% 0.18 85);
+  --color-info: oklch(70% 0.15 240);
+
+  /* ========================================
+     GLASSMORPHISM SYSTEM
+     ======================================== */
+  --glass-bg: var(--color-bg-surface);
+  --glass-bg-opacity: 0.55;
+  --glass-bg-strong: oklch(15% 0.03 60 / 0.75);
+  --glass-border: var(--color-border-default);
+  --glass-border-opacity: 0.18;
+  --glass-blur: blur(20px) saturate(140%);
+  --glass-blur-strong: blur(28px) saturate(160%);
+
+  /* ========================================
+     SHADOW SYSTEM
+     ======================================== */
+  --shadow-glass: 
+    0 8px 32px oklch(5% 0.02 40 / 0.6),
+    inset 0 1px 0 oklch(80% 0.08 70 / 0.08);
+  --shadow-glow: 0 0 40px oklch(64% 0.18 80 / 0.25);
+  --shadow-soft: 0 4px 20px oklch(5% 0.02 40 / 0.4);
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px oklch(0% 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px oklch(0% 0 0 / 0.3);
+  --shadow-xl: 0 20px 25px -5px oklch(0% 0 0 / 0.3);
+
+  /* ========================================
+     GRADIENTS
+     ======================================== */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  --gradient-gold: linear-gradient(135deg, oklch(70% 0.16 80), oklch(55% 0.14 80));
+  --gradient-overlay: linear-gradient(180deg, oklch(8% 0.03 50 / 0.55), oklch(6% 0.02 50 / 0.85));
+  --gradient-card: linear-gradient(145deg, oklch(75% 0.10 70 / 0.08), oklch(15% 0.04 60 / 0.4));
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+/* .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: ;
+    padding: 25px 20px;
+    transition: all 0.4s ease;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+} */
+
+.sidebar{
+    /* position: fixed; */
+    flex-shrink: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: var(--color-sidebar-bg);
+    backdrop-filter: var(--glass-blur);
+
+    padding: 25px 20px;
+
+    border-right: 1px solid var(--color-sidebar-border);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    box-shadow: var(--shadow-glass);
+
+    transition: all 0.4s ease;
+}
+
+.sidebar-header{
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header img{
+    width: 42px;
+    border-radius: 50%;
+}
+
+/* .sidebar-header h2{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 23px;
+} */
+
+.sidebar-header h2{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-sidebar-fg);
+    margin-left: 23px;
+}
+
+.sidebar-links{
+    list-style: none;
+    margin-top: 20px;
+}
+
+/* .sidebar-links li a{
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    color: #dbd4d4e3;
+    font-weight: 500;
+    padding: 15px 10px;
+    white-space: nowrap;
+    text-decoration: none;
+} */
+
+.sidebar-links li a{
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+
+    color: var(--color-sidebar-fg-muted);
+    font-weight: 500;
+
+    padding: 15px 10px;
+    white-space: nowrap;
+    text-decoration: none;
+
+    border-radius: 6px;
+    transition: all .25s ease;
+}
+
+
+/* .sidebar-links li a:hover{
+    background: #ffffff2d;
+    color: #fff;
+    border-radius: 4px;
+} */
+
+.sidebar-links li a:hover{
+    background: var(--color-sidebar-item-hover);
+    color: var(--color-sidebar-fg);
+}
+
+.sidebar-links li a.active{
+    background: var(--color-sidebar-item-active-bg);
+    color: var(--color-sidebar-item-active-text);
+
+    border-left: 3px solid var(--color-sidebar-item-active-border);
+    box-shadow: var(--color-sidebar-item-active-glow);
+}
+
+
+/* .user-account{
+    margin-top: 270px;
+    padding: 12px 10px;
+    margin-left: -10px;
+} */
+
+.user-account{
+    margin-top: auto;
+    padding: 12px 10px;
+    margin-left: -10px;
+
+    border-top: 1px solid var(--color-sidebar-border);
+}
+
+/* .user-account .user-profile{
+    display: flex;
+    align-items: center;
+    color: #e5dede;
+} */
+
+.user-account .user-profile{
+    display: flex;
+    align-items: center;
+    color: var(--color-sidebar-fg);
+}
+
+.user-profile img{
+    width: 42px;
+    border-radius: 50%;
+}
+
+.user-detail{
+    margin-left: 23px;
+    white-space: nowrap;
+}
+
+/* .user-profile h3{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.user-profile span{
+    font-size: 0.775rem;
+    font-weight: 600;
+} */
+
+.user-profile h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-sidebar-fg);
+}
+
+.user-profile span{
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--color-sidebar-fg-muted);
+}
