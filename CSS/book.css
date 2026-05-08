@@ -1,0 +1,354 @@
+:root {
+  /* ======================
+       BASE BACKGROUND
+    ====================== */
+
+  /* Deep warm brown background */
+  --background-base: #140f0a;
+
+  /* ======================
+       BACKGROUND IMAGE
+    ====================== */
+
+  --background-image: url("https://wallpapers.com/images/hd/old-library-books-drawing-ulme7n8ce4bsuabu.jpg");
+
+  /* ======================
+       GRADIENT OVERLAY
+    ====================== */
+
+  /* Top lighter atmosphere */
+  --overlay-top: hsla(30, 27%, 6%, 0);
+
+  /* Bottom stronger readability */
+  --overlay-bottom: hsla(25, 30%, 4%, 0.85);
+
+  --gradient-overlay: linear-gradient(
+    180deg,
+    var(--overlay-top),
+    var(--overlay-bottom)
+  );
+
+  /* ======================
+       GLASS CARD SURFACE
+    ====================== */
+
+  --glass-light: hsla(36, 40%, 70%, 0.08);
+  --glass-dark: hsla(28, 20%, 12%, 0.4);
+
+  --gradient-card: linear-gradient(
+    145deg,
+    var(--glass-light),
+    var(--glass-dark)
+  );
+
+  /* Glass Effect */
+  --glass-blur: blur(18px);
+  --glass-saturation: saturate(140%);
+
+  /* ======================
+       GLASS BORDER
+    ====================== */
+
+  --glass-border: hsla(36, 40%, 70%, 0.18);
+
+  /* ======================
+       SHADOWS & LIGHTING
+    ====================== */
+
+  /* Floating card shadow */
+  --shadow-glass: 0 8px 32px hsla(20, 30%, 4%, 0.6);
+
+  /* Internal light highlight */
+  --highlight-inset: inset 0 1px 0 hsla(36, 60%, 80%, 0.08);
+
+  /* ======================
+       TEXT COLORS
+    ====================== */
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+
+  /* ======================
+       ACCENT COLORS
+    ====================== */
+
+  --accent-gold: hsl(36, 40%, 70%);
+  --accent-hover: hsl(36, 40%, 60%);
+
+  /* ======================
+       RADIUS
+    ====================== */
+
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+
+  /*=============================================================================================================
+  ===============================================================================================================*/
+   --book-bg-page:            25 18% 8%;            /* Page backdrop                */
+  --book-bg-card:            28 20% 12%;           /* Table / panel surface        */
+  --book-bg-overlay:         25 18% 8% / 0.70;     /* Modal scrim                  */
+  --book-bg-input:           0 0% 100% / 0.05;     /* Search field background      */
+  --book-bg-row-hover:       0 0% 100% / 0.03;     /* Table row hover              */
+  --book-bg-icon-hover:      0 0% 100% / 0.10;     /* Action icon hover            */
+  --book-bg-cancel-hover:    0 0% 100% / 0.05;     /* Cancel button hover          */
+
+  /* ============================================================
+     2. TEXT
+     ============================================================ */
+  --book-text-primary:       36 30% 92%;           /* Title, body, table cells     */
+  --book-text-secondary:     36 30% 94%;           /* Card titles                  */
+  --book-text-muted:         36 14% 68%;           /* Subtitles, column headers    */
+  --book-text-placeholder:   36 14% 68% / 0.70;    /* Search placeholder           */
+  --book-text-on-primary:    25 30% 10%;           /* Text on gold button          */
+
+  /* ============================================================
+     3. PRIMARY (Gold) — CTA & Active Badge
+     ============================================================ */
+  --book-primary:            36 65% 58%;           /* "Register Student" CTA       */
+  --book-primary-glow:       38 85% 68%;           /* Gradient end of CTA          */
+  --book-primary-soft-bg:    36 65% 58% / 0.20;    /* Active badge background      */
+  --book-primary-soft-border:36 65% 58% / 0.30;    /* Active badge border          */
+  --book-primary-icon-hover: 36 65% 58%;           /* Edit icon hover              */
+
+  /* ============================================================
+     4. ACCENT (Burgundy) — Warn Badge
+     ============================================================ */
+  --book-accent:             18 55% 42%;           /* Warn badge text              */
+  --book-accent-soft-bg:     18 55% 42% / 0.20;    /* Warn badge background        */
+  --book-accent-soft-border: 18 55% 42% / 0.30;    /* Warn badge border            */
+
+  /* ============================================================
+     5. DESTRUCTIVE (Red) — Inactive Badge & Delete
+     ============================================================ */
+  --book-destructive:        0 65% 52%;            /* Delete icon, inactive text   */
+  --book-destructive-soft-bg:0 65% 52% / 0.20;     /* Inactive badge background    */
+  --book-destructive-soft-border: 0 65% 52% / 0.30;/* Inactive badge border        */
+  --book-destructive-hover-bg:0 65% 52% / 0.20;    /* Delete icon hover            */
+
+  /* ============================================================
+     6. MUTED — Neutral Badge
+     ============================================================ */
+  --book-muted-bg:           0 0% 100% / 0.05;     /* Muted badge background       */
+  --book-muted-border:       0 0% 100% / 0.10;     /* Muted badge border           */
+
+  /* ============================================================
+     7. BORDERS & DIVIDERS
+     ============================================================ */
+  --book-border-glass:       36 40% 70% / 0.18;    /* Row dividers, search border  */
+  --book-border-subtle:      36 25% 25% / 0.25;    /* Default border               */
+
+  /* ============================================================
+     8. SIDEBAR (visible alongside the page)
+     ============================================================ */
+  --book-sidebar-bg:         25 22% 9% / 0.70;     /* Glass sidebar panel          */
+  --book-sidebar-fg:         36 25% 85%;           /* Sidebar labels               */
+  --book-sidebar-accent:     28 20% 18% / 0.60;    /* Hover row in sidebar         */
+  --book-sidebar-border:     36 30% 50% / 0.15;    /* Sidebar divider              */
+
+  /* ============================================================
+     9. SHADOWS & GLOW
+     ============================================================ */
+  --book-shadow-glow:        0 0 40px hsl(36 65% 58% / 0.25);
+  --book-shadow-glow-strong: 0 0 40px hsl(36 65% 58% / 0.45);
+  --book-shadow-glass:
+    0 8px 32px hsl(20 30% 4% / 0.6),
+    inset 0 1px 0 hsl(36 60% 80% / 0.08);
+
+  /* ============================================================
+     10. GRADIENTS
+     ============================================================ */
+  --book-gradient-cta:
+    linear-gradient(
+      to right,
+      hsl(var(--book-primary)),
+      hsl(var(--book-primary-glow))
+    );
+  --book-gradient-overlay:
+    linear-gradient(
+      180deg,
+      hsl(25 25% 6% / 0.55),
+      hsl(25 30% 4% / 0.85)
+    );
+}
+
+/* body{
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.9)),
+        url("https://wallpapers.com/images/hd/old-library-books-drawing-ulme7n8ce4bsuabu.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+} */
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--background-base);
+  background-image: var(--gradient-overlay), var(--background-image);
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: var(--text-primary);
+}
+
+.layout {
+  display: flex;
+  height: 100vh; /* controla a viewport */
+  overflow: hidden;
+}
+
+.container {
+  flex: 1;
+  padding: 40px;
+
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+
+  gap: 28px;
+  /* align-items: start; */
+  align-items: stretch;
+
+  min-height: 0;
+
+  overflow: hidden; /* ← ADICIONAR */
+  height: 100%; /* ← ADICIONAR */
+  box-sizing: border-box; /* ← ADICIONAR (para padding não estourar) */
+}
+
+.card-book{
+    width: 100%;
+    height: 100%;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.register{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: red; */
+    background: var(--gradient-card);
+    backdrop-filter: var(--glass-blur) var(--glass-saturation);
+    padding: 15px;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+
+    box-shadow:
+        var(--shadow-glass),
+        var(--highlight-inset);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* SEARCH WRAPPER */
+.action .search {
+  display: flex;
+  align-items: center;
+}
+
+/* INPUT SEARCH */
+#searchS {
+  width: 860px;
+  height: 42px;
+
+  padding: 0 14px;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--book-border-glass));
+
+  background: hsl(var(--book-bg-input));
+  backdrop-filter: var(--glass-blur) var(--glass-saturation);
+
+  color: hsl(var(--book-text-primary));
+  font-size: 14px;
+
+  outline: none;
+  transition: 0.2s ease;
+}
+
+
+.action .register-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 0 18px;
+  height: 42px;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--book-primary-soft-border));
+
+  background: var(--book-gradient-cta);
+  color: hsl(var(--book-text-on-primary));
+
+  font-weight: 500;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: var(--book-shadow-glow);
+}
+
+.action .filters{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 0 18px;
+  height: 42px;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--book-border-glass));
+
+  background: hsl(var(--book-bg-input));
+  backdrop-filter: var(--glass-blur) var(--glass-saturation);
+
+  color: hsl(var(--book-text-primary));
+  font-size: 14px;
+
+  outline: none;
+  transition: 0.2s ease;
+}
+
+
+.action .register-book:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--book-shadow-glow-strong);
+  filter: brightness(1.05);
+}
+
+/* ACTIVE CLICK */
+.action .register-book:active {
+  transform: translateY(0);
+  box-shadow: var(--book-shadow-glow);
+}

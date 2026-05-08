@@ -13,3 +13,10 @@ export async function loadTableStudents(){
     document.getElementById('table').innerHTML = html;
     
 }
+
+export async function loadCardBook(){
+    const response = await fetch('../Components/CardBook.html');
+    const html = await response.text();
+
+    document.getElementById('card-book').innerHTML = html;
+}

@@ -1,0 +1,149 @@
+
+:root {
+  /* ============================================
+     SURFACES & BACKGROUNDS
+     ============================================ */
+  --books-bg-page: 25 18% 8%;                    /* page background */
+  --books-bg-toolbar: 28 20% 12% / 0.55;         /* glass toolbar */
+  --books-bg-card: 28 20% 12% / 0.55;            /* book card glass */
+  --books-bg-modal-backdrop: 25 18% 8% / 0.7;    /* modal overlay */
+  --books-bg-modal: 28 20% 10% / 0.75;           /* modal panel (glass-strong) */
+
+  /* Input / pill surfaces (search box, filter button) */
+  --books-bg-input: 0 0% 100% / 0.05;            /* subtle white wash */
+  --books-bg-input-hover: 0 0% 100% / 0.10;      /* filter hover */
+  --books-bg-ghost-hover: 0 0% 100% / 0.05;      /* cancel button hover */
+
+  /* ============================================
+     BORDERS
+     ============================================ */
+  --books-border-glass: 36 40% 70% / 0.18;       /* default glass border */
+  --books-border-card-divider: 36 40% 70% / 0.18;
+  --books-border-badge-available: 36 65% 58% / 0.40;
+  --books-border-badge-loan: 0 65% 52% / 0.40;
+
+  /* ============================================
+     TEXT
+     ============================================ */
+  --books-text-primary: 36 30% 92%;              /* default foreground */
+  --books-text-muted: 36 14% 68%;                /* author, meta */
+  --books-text-tertiary: 36 14% 68% / 0.7;       /* publisher · year */
+  --books-text-category: 36 65% 58% / 0.8;       /* gold eyebrow */
+  --books-text-on-cta: 25 30% 10%;               /* primary-foreground */
+
+  /* ============================================
+     BRAND / CTA
+     ============================================ */
+  --books-primary: 36 65% 58%;                   /* gold */
+  --books-primary-glow: 38 85% 68%;              /* lighter gold */
+  --books-gradient-cta: linear-gradient(
+    to right,
+    hsl(var(--books-primary)),
+    hsl(var(--books-primary-glow))
+  );
+
+  /* ============================================
+     STATE — BADGES
+     ============================================ */
+  --books-badge-available-bg: 36 65% 58% / 0.20;
+  --books-badge-available-text: 36 65% 58%;
+  --books-badge-loan-bg: 0 65% 52% / 0.20;
+  --books-badge-loan-text: 36 30% 96%;
+
+  /* ============================================
+     IMAGE OVERLAY (cover gradient fade)
+     ============================================ */
+  --books-cover-overlay: linear-gradient(
+    to top,
+    hsl(25 18% 8% / 0.9),
+    transparent,
+    transparent
+  );
+
+  /* ============================================
+     SHADOWS / GLOW
+     ============================================ */
+  --books-shadow-cta: 0 0 40px hsl(var(--books-primary) / 0.25);
+  --books-shadow-cta-hover: 0 0 40px hsl(var(--books-primary) / 0.45);
+  --books-shadow-glass:
+    0 8px 32px hsl(20 30% 4% / 0.6),
+    inset 0 1px 0 hsl(36 60% 80% / 0.08);
+}
+
+
+body {
+  background-color: hsl(var(--books-bg-page));
+}
+
+
+.card-container{
+    height: 100%;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 25px;
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    
+}
+
+.card{
+ position: relative;        /* necessário para o ::after da imagem */
+  width: 250px;
+  height: 420px;
+  padding: 10px;
+  border-radius: 15px;
+
+  /* variáveis aplicadas */
+  background: hsl(var(--books-bg-card));
+  border: 1px solid hsl(var(--books-border-glass));
+  box-shadow: var(--books-shadow-glass);
+}
+/* .card img{
+    width: 100%;
+    height: 320px;
+} */
+
+/* wrapper que segura o overlay */
+.cover-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;   /* garante que o overlay não vaze fora do arredondamento */
+}
+
+/* a imagem preenche o wrapper */
+.cover-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* overlay escuro por cima da imagem */
+.cover-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--books-cover-overlay);
+}
+
+
+/* ===== TEXTOS ===== */
+.card-content .title {
+  color: hsl(var(--books-text-primary));
+  font-weight: 600;
+}
+
+.card-content .author {
+  color: hsl(var(--books-text-muted));
+  font-size: 0.875rem;
+}
+
+.card-content .meta {
+  color: hsl(var(--books-text-tertiary));
+  font-size: 0.75rem;
+}
