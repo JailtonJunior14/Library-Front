@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <dialog id="meuModal"></dialog>
 <div class="layout">
     <nav id="sidebar"></nav>
 
@@ -30,7 +31,7 @@
                     <input type="search" name="s" id="searchS" placeholder="SEARCH...">
                 </div>
 
-                <div class="register-student">
+                <div class="register-student" id="btnAdd">
                     <span class="material-symbols-outlined">
                         add
                     </span>
@@ -48,10 +49,25 @@
 
 
 <script type="module">
-    import {loadSideBar, loadTableStudents} from '/JS/layout.js';
+    import {loadSideBar, loadTableStudents, loadModalLibrarians} from '/JS/layout.js';
 
     await loadSideBar();
     await loadTableStudents();
+    await loadModalLibrarians();
+
+    const modal = document.getElementById('meuModal');
+    const btnAbrir = document.getElementById('btnAdd');
+
+    btnAbrir.addEventListener('click', () =>{
+        console.log("Clicado");
+        modal.showModal();
+    });
+
+    modal.addEventListener('click', (e) =>{
+        if (e.target === modal) {
+            modal.close();
+        }
+    })
 </script>
 </body>
 </html>

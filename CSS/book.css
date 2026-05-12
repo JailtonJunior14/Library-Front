@@ -352,3 +352,91 @@ body {
   transform: translateY(0);
   box-shadow: var(--book-shadow-glow);
 }
+
+
+dialog {
+
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--gradient-card);  /* seu glassmorphism */
+  backdrop-filter: var(--glass-blur) var(--glass-saturation);
+  box-shadow: var(--shadow-glass), var(--highlight-inset);
+  color: var(--text-primary);
+
+  width: 480px;
+  max-width: 90vw;
+  padding: 32px;
+
+  /* Centralizar: o dialog já centraliza sozinho com showModal(),
+      mas garantir com margin auto não faz mal */
+  margin: auto;
+}
+
+dialog[open]{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
+
+dialog[open] form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+dialog[open] form input{
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--students-border-glass));
+
+  background: hsl(var(--students-bg-input));
+  backdrop-filter: var(--glass-blur) var(--glass-saturation);
+
+  color: hsl(var(--students-text-primary));
+  font-size: 14px;
+
+  outline: none;
+  transition: 0.2s ease;
+}
+
+dialog[open] .btns{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: end;
+  gap: 10px;
+}
+
+dialog[open] #btnFechar{
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+dialog[open] #btnSavar{
+  width: 70px;
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--students-primary-soft-border));
+
+  background: var(--book-gradient-cta);
+  color: hsl(var(--book-text-on-primary));
+
+  font-weight: 500;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: var(--students-shadow-glow);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
