@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Janela Modal JS</title>
+<style>
+    /* Estilo do Overlay (fundo escuro) */
+    dialog {
+        border: none;
+        border-radius: 8px;
+        padding: 20px;
+        width: 900px;
+        height: 90%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    /* Estilo para quando o modal estiver aberto */
+    dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>
+</head>
+<body>
+
+    <h2>Tela Principal</h2>
+    <button id="btnAbrir">Abrir Janela</button>
+
+    <!-- O Modal -->
+    <dialog id="meuModal">
+        <h3>Janela Modal</h3>
+        <p>Conteúdo da janela sem sair da tela!</p>
+        <button id="btnFechar">Fechar</button>
+    </dialog>
+
+    <script>
+        const modal = document.getElementById('meuModal');
+        const btnAbrir = document.getElementById('btnAbrir');
+        const btnFechar = document.getElementById('btnFechar');
+
+        // Abre o modal
+        btnAbrir.addEventListener('click', () => {
+            modal.showModal(); // showModal() centraliza e habilita o backdrop
+        });
+
+        // Fecha o modal
+        btnFechar.addEventListener('click', () => {
+            modal.close();
+        });
+    </script>
+</body>
+</html>

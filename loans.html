@@ -9,20 +9,19 @@
 
 </head>
 <body>
-    <dialog id="meuModal"></dialog>
 <div class="layout">
     <nav id="sidebar"></nav>
 
 
     <div class="container">
         <header>
-            <h1>Students</h1>
+            <h1>Loans</h1>
             <p>Manage registered readers</p>
         </header>
 
         <div class="register">
             <div class="">
-                <h2>Registered Students</h2>
+                <h2>Registered Loans</h2>
                 <p>5 active readers in the system</p>
             </div>
 
@@ -31,11 +30,11 @@
                     <input type="search" name="s" id="searchS" placeholder="SEARCH...">
                 </div>
 
-                <div class="register-student" id="btnAdd">
+                <div class="register-student">
                     <span class="material-symbols-outlined">
                         add
                     </span>
-                    <h3>Register Student</h2>
+                    <h3>Register Loan</h2>
                 </div>
             </div>
         </div>
@@ -49,25 +48,10 @@
 
 
 <script type="module">
-    import {loadSideBar, loadTableStudents, loadModalStudents} from '/JS/layout.js';
+    import {loadSideBar, loadTableLoans} from '/JS/layout.js';
 
     await loadSideBar();
-    await loadTableStudents();
-    await loadModalStudents();
-
-    const modal = document.getElementById('meuModal');
-    const btnAbrir = document.getElementById('btnAdd');
-
-    btnAbrir.addEventListener('click', () =>{
-        console.log("Clicado");
-        modal.showModal();
-    });
-
-    modal.addEventListener('click', (e) =>{
-        if (e.target === modal) {
-            modal.close();
-        }
-    })
+    await loadTableLoans();
 </script>
 </body>
 </html>

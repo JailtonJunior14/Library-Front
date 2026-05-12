@@ -363,3 +363,25 @@ body {
   box-shadow: var(--students-shadow-glow);
 }
 
+
+dialog {
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    background: var(--gradient-card);  /* seu glassmorphism */
+    backdrop-filter: var(--glass-blur) var(--glass-saturation);
+    box-shadow: var(--shadow-glass), var(--highlight-inset);
+    color: var(--text-primary);
+
+    width: 480px;
+    max-width: 90vw;
+    padding: 32px;
+
+    /* Centralizar: o dialog já centraliza sozinho com showModal(),
+       mas garantir com margin auto não faz mal */
+    margin: auto;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
